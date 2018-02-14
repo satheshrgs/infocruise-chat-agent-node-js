@@ -29,8 +29,8 @@ const customerStore = new CustomerStore();
 const messageRouter = new MessageRouter(customerStore, apiAiApp, io.of('/customer'), io.of('/operator'));
 
 // Serve static html files for the customer and operator clients
-app.get('/customer', (req, res) => {
-  res.sendFile(`${__dirname}/static/customer.html`);
+app.get('/', (req, res) => {
+  res.sendFile(`${__dirname}/static/bot.html`);
 });
 
 app.get('/operator', (req, res) => {
