@@ -17,8 +17,9 @@
 		input:focus{outline: none;}        
 		body
 		{
-			background-image:url("http://www.aussiemegamall.com/wp-content/uploads/2017/11/Aqua-background.jpg");
 			background-repeat:no-repeat;
+			padding:0;
+			margin:0;
 		}
 		#win::-webkit-scrollbar-track
 		{
@@ -71,7 +72,7 @@
 		}
 		#inp,#m
 		{
-			width:100%;
+			width:99%;
 			height:50px;
 			
 		}
@@ -263,6 +264,19 @@
           $('#messages').append($('<li class="customer-error">').text(errorText));
         });
       });
+	  $(document).ready(function() {
+  function setHeight() {
+    windowHeight = $(window).innerHeight();
+	minval=(windowHeight*20)/100;
+	windowHeight-=minval;
+    $('#win').css('min-height', windowHeight);
+  };
+  setHeight();
+  
+  $(window).resize(function() {
+    setHeight();
+  });
+});
     </script>
   </body>
 </html>
