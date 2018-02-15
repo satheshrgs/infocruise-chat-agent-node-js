@@ -11,14 +11,14 @@
       </script>
 			
 	<style>
-		body{font-family: 'Roboto', sans-serif;}
+		body{font-family: 'Roboto', sans-serif;font-size:1.5em;}
 		#messages { list-style-type: none; margin: 0; padding: 0; }
 		#messages li.customer-error { color: red; }
 		input:focus{outline: none;}        
 		body
 		{
-			background-image:url("http://www.aussiemegamall.com/wp-content/uploads/2017/11/Aqua-background.jpg");
 			background-repeat:no-repeat;
+			
 		}
 		#win::-webkit-scrollbar-track
 		{
@@ -40,8 +40,8 @@
 		{
 			overflow:scroll;
 			overflow-x: hidden;
-			width:360px;
-			height:390px;
+			width:100%;
+			height:100%;
 			border-bottom: 1px solid black;
 			border-bottom-color:rgb(189, 199, 216);
 			border-top: 1px solid black;
@@ -51,8 +51,8 @@
 		}
 		#agent
 		{
-			width:365px;
-			height:510px;
+			width:100%;
+			height:100%;
 			border: 1px solid #FFF;
 			border-color:rgb(189, 199, 216);
 			border-radius: 15px;
@@ -66,13 +66,13 @@
 		}
 		#header
 		{
-			width:360px;
+			width:100%;
 			height:50px;
 		}
 		#inp,#m
 		{
-			width:330px;
-			height:50px;
+			width:99%;
+			height:30%;
 			
 		}
 		.text
@@ -94,7 +94,7 @@
 			color: #000;
 			float:left;
 			z-index:100000;
-			font-size:15px;
+			font-size:1.5em;
 		}
 		.custmsg
 		{
@@ -107,12 +107,10 @@
 			float: right;
 			clear: both;
 			display: block;
-			font-size: 12pt;
 			line-height: 15pt;
 			margin: 1pt 0;
 			max-width: 90%;
 			padding: 6pt 9pt;
-			font-size:13px;
 
 		}
 		.botmsg
@@ -125,12 +123,11 @@
 			float: left;
 			clear: both;
 			display: block;
-			font-size: 12pt;
+			
 			line-height: 15pt;
 			margin: 1pt 0;
 			max-width: 95%;
 			padding: 6pt 9pt;
-			font-size:13px;
 			text-align: left;
 		}
 		.header
@@ -150,7 +147,7 @@
 			
 			color:#1d2129;
 			
-			padding-right:105px;
+			padding-right:45%;
 		}
 		.min-button
 		{
@@ -189,7 +186,7 @@
   </head>
   <body>
   <center>
-	<br><br><br>
+	
 	<div id="main">
 		<div id="agent">
 			<div id="header" class="header" onclick="minimizechat()">	
@@ -199,7 +196,7 @@
 					</div>
 				</div>
 				<div class="bot-title">
-					Infocruise Chat Bot
+					InfoBot
 				</div>
 			</div>
 			<div id="win">
@@ -263,6 +260,19 @@
           $('#messages').append($('<li class="customer-error">').text(errorText));
         });
       });
+	  $(document).ready(function() {
+  function setHeight() {
+    windowHeight = $(window).innerHeight();
+	minval=(windowHeight*20)/100;
+	windowHeight-=minval;
+    $('#win').css('min-height', windowHeight);
+  };
+  setHeight();
+  
+  $(window).resize(function() {
+    setHeight();
+  });
+});
     </script>
   </body>
 </html>
