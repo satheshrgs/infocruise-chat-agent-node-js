@@ -117,7 +117,7 @@ class MessageRouter {
 
   // Sends an utterance to API.AI and returns a promise with API response.
   _sendUtteranceToAgent (utterance, customer) {
-    console.log('Sending utterance to agent');
+    
     const request = this.apiAiApp.textRequest(utterance, { sessionId: customer.id });
     const promise = new Promise((resolve, reject) => {
       request.on('response', resolve);
@@ -130,7 +130,7 @@ class MessageRouter {
   // Send an utterance, or an array of utterances, to the operator channel so that
   // every operator receives it.
   _sendUtteranceToOperator (utterance, customer, isAgentResponse) {
-    console.log('Sending utterance to any operators');
+    
     if (Array.isArray(utterance)) {
       utterance.forEach(message => {
         this.operatorRoom.emit(AppConstants.EVENT_CUSTOMER_MESSAGE,
