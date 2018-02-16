@@ -72,10 +72,12 @@
 		}
 		#inp,#m
 		{
-			width:330px;
+			width:250px;
 			height:50px;
+			float:left;
 			
 		}
+		
 		.text
 		{
 			width:75%;
@@ -86,13 +88,13 @@
 			width:75%;
 			float:left;
 		}        
-		input
+		#m
 		{
 			font-family: 'Nanum Pen Script', cursive;
 			background-color: #fff;
 			border: 0px solid;
 			height: 50px;;
-			width: 30px;
+			
 			color: #000;
 			float:left;
 			z-index:100000;
@@ -102,7 +104,7 @@
 		{
 
 			padding-top:5px;
-			background-color: rgb(0, 132, 255);
+			background-color: #b6d17a;
 			border-bottom-left-radius: 1.3em;
 			border-top-left-radius: 1.3em;
 			color: #fff;
@@ -189,6 +191,27 @@
 			width:50px;
 			height:50px;
 		}
+		#bot_send_button
+		{
+			height:40px;
+			width:80px;
+			border-radius: 10px;
+			font-size:1.25em;
+			font-family: 'Nanum Pen Script', cursive;
+			background-color:#b6d17a;
+			color:#fff;
+			
+		}
+		#button_div
+		{
+			padding-top:7.5px;
+		}
+		#input_message
+		{
+			padding-left:5px;
+		}
+		
+		
     </style>
 	
   </head>
@@ -200,9 +223,14 @@
 			<div id="win">
 				<ul id="messages"></ul>
 			</div>
-			<div id="inp">
+			<div>
 				<form>
+				<div id="input_message">
 					<input id="m" autocomplete="off" placeholder="Ask Something....." autofocus/>
+				</div>
+				<div id="button_div">
+					<input type="submit" value="Send" id="bot_send_button">
+				</div>
 				</form>
 			</div>
 		</div>
