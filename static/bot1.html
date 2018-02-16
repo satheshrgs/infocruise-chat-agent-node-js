@@ -234,29 +234,12 @@
 				</form>
 			</div>
 		</div>
-		<div id="messenger-img" onclick="maximizechat()">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Facebook_Messenger_logo.svg/2000px-Facebook_Messenger_logo.svg.png">
-		</div>
+		
 	</div>
     <script src="/socket.io/socket.io.js"></script>
 
     <script>
-	document.getElementById("messenger-img").style.display="none";
-	document.getElementById("agent").style.display="none";
-	maximizechat();
-	function minimizechat()
-	{
-		document.getElementById("agent").style.display="none";
-		document.getElementById("messenger-img").style.display="block";
-	}
-	function maximizechat()
-	{
-		$( "#messenger-img" ).toggle( "bounce", { times: 4 }, "slow" );
-		setTimeout( function(){ 
-			document.getElementById("agent").style.display="block";
-			document.getElementById("messenger-img").style.display="none";
-  }  , 2000 );
-	}
+	
       $(function () {
         var socket = io('/customer');
         $('form').submit(function(){
