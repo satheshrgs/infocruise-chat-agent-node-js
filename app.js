@@ -33,8 +33,8 @@ app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/static/bot.html`);
 });
 
-app.get('/test', (req, res) => {
-  res.sendFile(`${__dirname}/static/bot-c.html`);
+app.get('/mobile', (req, res) => {
+  res.sendFile(`${__dirname}/static/bot-m.html`);
 });
 
 app.get('/web', (req, res) => {

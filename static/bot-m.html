@@ -11,14 +11,16 @@
       </script>
 			
 	<style>
-		body{font-family: 'Roboto', sans-serif;font-size:1.5em;}
+		body{font-family: 'Roboto', sans-serif; font-size:1.5em;}
 		#messages { list-style-type: none; margin: 0; padding: 0; }
 		#messages li.customer-error { color: red; }
 		input:focus{outline: none;}        
 		body
 		{
+			margin:0;
+			padding:0;
 			background-repeat:no-repeat;
-			
+			font-size-adjust:inherit;
 		}
 		#win::-webkit-scrollbar-track
 		{
@@ -38,7 +40,7 @@
 		}
 		#win
 		{
-			overflow:scroll;
+			overflow-y:scroll;
 			overflow-x: hidden;
 			width:100%;
 			height:100%;
@@ -47,6 +49,7 @@
 			border-top: 1px solid black;
 			border-top-color:rgb(189, 199, 216);
 			padding-top:10px;
+			min-height:200px;
 	 
 		}
 		#agent
@@ -55,11 +58,11 @@
 			height:100%;
 			border: 1px solid #FFF;
 			border-color:rgb(189, 199, 216);
-			border-radius: 15px;
+			
 			border-bottom-color:rgba(0, 0, 0, 0.1);
 			border-bottom-style:solid;
 			border-bottom-width:1.325px;
-			box-shadow: 5px 2px 5px 8px rgb(189, 199, 216);
+			
 			z-index:100000;
 			background-color:#fff;
 		  
@@ -67,7 +70,9 @@
 		#header
 		{
 			width:100%;
-			height:50px;
+			height:100px;
+			color:white;
+			background-color:#3b5998;
 		}
 		#inp,#m
 		{
@@ -107,10 +112,12 @@
 			float: right;
 			clear: both;
 			display: block;
-			line-height: 15pt;
+			line-height: 35pt;
 			margin: 1pt 0;
-			max-width: 90%;
+			min-width:15%;
+			max-width: 95%;
 			padding: 6pt 9pt;
+			font-size:1.5em;
 
 		}
 		.botmsg
@@ -123,9 +130,10 @@
 			float: left;
 			clear: both;
 			display: block;
-			
-			line-height: 15pt;
+			font-size:1.5em;
+			line-height: 35pt;
 			margin: 1pt 0;
+			min-width:15%;
 			max-width: 95%;
 			padding: 6pt 9pt;
 			text-align: left;
@@ -137,7 +145,7 @@
 			display: flex;
 			flex-basis: 10%;
 			justify-content: space-between;
-			max-height: 48pt;
+			color:white;
 			min-height: 36pt;
 			text-align: center;
 			cursor:pointer;
@@ -145,9 +153,9 @@
 		.bot-title
 		{
 			
-			color:#1d2129;
-			
-			padding-right:45%;
+			color:white;
+			font-size:2em;
+			padding-left:40%;
 		}
 		.min-button
 		{
@@ -190,11 +198,7 @@
 	<div id="main">
 		<div id="agent">
 			<div id="header" class="header" onclick="minimizechat()">	
-				<div class="min-button" align="left">
-					<div class="disp-btn">
-						<span class="min-button" onclick="minimizechat()"><img src="https://cdn3.iconfinder.com/data/icons/line/36/subtract-512.png"></span>
-					</div>
-				</div>
+				
 				<div class="bot-title">
 					InfoBot
 				</div>
@@ -260,7 +264,8 @@
           $('#messages').append($('<li class="customer-error">').text(errorText));
         });
       });
-	  $(document).ready(function() {
+	
+	$(document).ready(function() {
   function setHeight() {
     windowHeight = $(window).innerHeight();
 	minval=(windowHeight*20)/100;
@@ -269,9 +274,7 @@
   };
   setHeight();
   
-  $(window).resize(function() {
-    setHeight();
-  });
+  
 });
     </script>
   </body>
